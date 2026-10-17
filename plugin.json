@@ -1,23 +1,31 @@
 {
-  "name": "REPLACE-ME",
-  "version": "0.1",
-  "enabled": false,
-  "schedule": "0 4 * * *",
-  "model": "sonnet",
-  "timeout_seconds": 1800,
-
+  "manifest_version": 2,
+  "name": "replace-me",
+  "version": "0.1.0",
+  "description": "Replace with one line on what the plugin does.",
+  "zone": "agent",
+  "capabilities": {
+    "schedules": [
+      {"label": "daily", "cron": "0 4 * * *", "llm": "claude", "model": "sonnet",
+       "timeout_seconds": 1800, "skill": "skill.md"}
+    ],
+    "tools": [],
+    "denied_tools": [],
+    "cards": [],
+    "mail_rules": {"closure_confirm_senders": [], "closure_exclude_senders": [],
+                   "keep_from_anthropic_domains": []},
+    "network": {"domains": [], "local": []},
+    "secrets": []
+  },
+  "state_dirs": ["state"],
+  "scopes": [],
   "context": {
-    "ea_briefing": false,
     "ledger_read": "own",
     "ledger_write": "own",
-    "graph_actions": [],
-    "google_calendar": false,
-    "google_drive": false,
-    "fetch_url": false
+    "graph_actions": []
   },
-
   "output": {
-    "channel_key": "REPLACE-ME-channel",
+    "channel_key": "replace-me-channel",
     "format_anchors": [":sparkles:"]
   }
 }
