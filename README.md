@@ -1,6 +1,6 @@
-# ea-plugin-template
+# tacitus-plugin-template
 
-The skeleton for an EA plugin: one directory with a `plugin.json` (manifest
+The skeleton for a Tacitus plugin (a plugin for the EA): one directory with a `plugin.json` (manifest
 v2) at its root. A plugin adds a capability to the EA without code in EA
 core, and it lives in its own repo. The full guide is `docs/plugins.md` in
 the ea-system repo.
@@ -8,7 +8,7 @@ the ea-system repo.
 ## A new plugin
 
 ```bash
-gh repo create <owner>/ea-plugin-<name> --template <owner>/ea-plugin-template \
+gh repo create <owner>/ea-plugin-<name> --template arpg/tacitus-plugin-template \
     --private --clone
 cd ea-plugin-<name>
 ```
@@ -73,3 +73,8 @@ install and update needs explicit consent.
 - Ledger writes go through `ea_plugins.ledger`; row ids start with the
   plugin name, and the helper sets `source = 'plugin:<name>'`.
 - A failed run reaches only this plugin's log and channel.
+
+## License
+
+MIT (see LICENSE), so a plugin made from this skeleton may carry any
+license. Tacitus itself is AGPL-3.0-only.
